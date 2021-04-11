@@ -53,6 +53,7 @@ body {
 @media screen and (min-width: 992px) {
   body {
     max-width: 80vw;
+    position: relative;
   }
 }
 
@@ -67,7 +68,181 @@ p {
 
 /* Navbar style */
 
-/*  */
+.header {
+  padding: 20px 2vw;
+  background-color: var(--white);
+  z-index: 1000;
+  position: relative;
+  top: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .topnav {
+    padding: 3.5%;
+  }
+}
+
+.header-img {
+  position: absolute;
+  top: 35px;
+  left: calc(5% + 2vw);
+  width: 40%;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+  .header-img {
+    width: 30%;
+    top: 28px;
+    left: calc(7.5% + 2vw);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header-img {
+    width: 15%;
+    top: 80px;
+    left: 2vw;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 60px;
+  z-index: 99;
+  width: 100%;
+}
+    
+@media screen and (min-width: 992px) {
+  nav {
+    justify-content: flex-start;
+    position: relative;
+    width: unset;
+  }
+}
+  
+.nav-links {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  top: 100px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-links {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-links {
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    width: unset;
+    top: unset;
+    position: relative;
+  }
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 40px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-links li {
+    opacity: 1;
+    margin: 0;
+  }
+}
+
+.nav-links a {
+  color: var(--black);
+  text-decoration: none;
+  padding: 12px 12px;
+  margin: 5px;
+  font-family: var(--roboto);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-links a:hover {
+    background-color: var(--imperial-red);
+    color: var(--white);
+  }
+  .topnav a.active {
+    background-color: var(--imperial-red);
+    color: var(--white);
+    border-radius: 15px;
+  }
+}
+
+.nav-active {
+  transform: translate3d(0%, 0, 0);
+}
+
+@keyframes navLinksFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Burger style */
+
+.burger {
+  display: block;
+  /* right: calc(5% + 2vw); */
+  right: 1%;
+  top: 34px;
+  cursor: pointer;
+  position: absolute; 
+}
+
+@media screen and (min-width: 992px) {
+  .burger {
+    display: none;
+  }
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--imperial-red);
+  margin: 5px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+
+.toggle .line-1 {
+  transform: rotate(-45deg) translate(-5px, 6px)
+}
+
+.toggle .line-2 {
+  opacity: 0
+}
+
+.toggle .line-3 {
+  transform: rotate(45deg) translate(-5px, -6px)
+}
 
 /* Main style */
 
@@ -138,7 +313,7 @@ main {
   }
 }
 
-/* .hero-content::after {
+/* #hero-content::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -149,7 +324,7 @@ main {
 } 
 
 @media screen and (min-width: 768px) {
-  .hero-content::after {
+  #hero-content::after {
     content: unset;
   }
 } */
@@ -233,7 +408,7 @@ main {
 @media screen and (min-width: 992px) {
   .hero-img-desktop {
     grid-column: span 7;
-    background-image: url("./bg_img.jpg");
+    background-image: url("../../assets/bg_img.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 50%;
@@ -258,12 +433,6 @@ main {
   background: var(--spanish-blue);
 }
 
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-default);
-}
-
 /* Modal form */
 
 .button {
@@ -279,10 +448,6 @@ main {
 /* .button:hover {
   background: var(--spanish-blue);
 } */
-
-.smFont {
-  font-size: 16px;
-}
 
 .bground {
   display: none;
@@ -497,7 +662,6 @@ input[data-error]::after {
   outline: none;
   font-size: var(--font-size);
   padding: 15px 23px;
-  margin: 0;
   margin-top: 59px;
 }
 
