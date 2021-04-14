@@ -78,7 +78,7 @@ p {
 
 @media screen and (min-width: 992px) {
   .topnav {
-    padding: 3.5%;
+    padding: 1.5% 3.5%;
   }
 }
 
@@ -101,7 +101,7 @@ p {
 @media screen and (min-width: 992px) {
   .header-img {
     width: 15%;
-    top: 80px;
+    top: 50px;
     left: 2vw;
   }
 }

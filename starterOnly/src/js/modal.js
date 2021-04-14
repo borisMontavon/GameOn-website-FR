@@ -55,7 +55,7 @@ const navSlide = () => {
 
 // DOM Elements
 const body = document.body;
-const modalbg = document.querySelector("#bground");
+const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
@@ -65,3 +65,8 @@ modalBtn.forEach((btn) => btn.addEventListener("click", () => {
   modalbg.style.display = "block";
   body.classList.toggle("overflow");
 }));
+
+closeModal.addEventListener("click", () => {
+	modalbg.style.display = "none";
+  	body.classList.toggle("overflow");
+});
