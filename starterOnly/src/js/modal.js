@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() { 
-  navSlide();
+	navSlide();
 });
 
 //Nav animation
@@ -62,8 +62,8 @@ const closeModal = document.querySelector(".close");
 
 // Launch modal event + disable overflow on body (prevent double scrolling)
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
-  modalbg.style.display = "block";
-  body.classList.toggle("overflow");
+	modalbg.style.display = "block";
+	body.classList.toggle("overflow");
 }));
 
 closeModal.addEventListener("click", () => {
