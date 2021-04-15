@@ -499,6 +499,10 @@ input {
   outline: none;
 }
 
+input[type="date"] {
+  font-family: var(--roboto);
+}
+
 .text-control {
   margin: 0;
   padding: 8px;
@@ -533,12 +537,18 @@ input {
   border: 2px solid var(--red-crayola);
 }
 
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+#firstNameSpan,
+#lastNameSpan,
+#emailSpan,
+#quantitySpan,
+#birthSpan,
+#checkboxSpan,
+#conditionsSpan {
+  font-size: 0.8rem;
+  color: var(--imperial-red);
+  margin-top: 5px;
+  display: none;
+}
 
 /* Checkbox style */
 
