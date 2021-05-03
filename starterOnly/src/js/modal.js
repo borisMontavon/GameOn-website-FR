@@ -61,13 +61,13 @@ const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
 
 // Form validation
-const formValidation = new FormValidation();
+// const formValidation = new FormValidation();
 
 // Launch modal event + disable overflow on body (prevent double scrolling)
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
 	modalbg.style.display = "block";
 	body.classList.toggle("overflow");
-	formValidation.isFormFieldsValid();
+	isFormFieldsValid();
 }));
 
 // Force close modal
