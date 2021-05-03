@@ -125,6 +125,19 @@ class FormValidation {
         return true;
     }
 
+    // Display the "Thank you" modal
+    displayThankYouModal() {
+        const formOne = document.querySelector("form");
+        const contentOne = document.querySelector(".content");
+        const modalBody = document.querySelector(".modal-body");
+        const thankYouModal  = document.querySelector(".thank-you-modal");
+
+        formOne.style.display = "none";
+        contentOne.toggle("content-height");
+        modalBody.toggle("modal-body-height");
+        thankYouModal.style.display = "flex";
+    }
+
     // Submit and check if inputs are valids
     isFormFieldsValid() {
         const btnSubmit = document.querySelector("#btnSubmit");
@@ -150,13 +163,16 @@ class FormValidation {
             if (this.isOneCheckboxSelected()) {
                 isFormValid = false;
             }
-            if (this.isConditionsChecked()) {
+            if (!this.isConditionsChecked()) {
                 isFormValid = false;
             }
 
             if (isFormValid) {
-                displayThankYouModal();
+                this.displayThankYouModal();
             }
         });
     }
+
+    // var closeSubmittedModal = document.querySelector("#close-submitted-modal");
+
 }

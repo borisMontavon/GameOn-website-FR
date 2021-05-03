@@ -70,6 +70,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", () => {
 	formValidation.isFormFieldsValid();
 }));
 
+// Force close modal
 closeModal.addEventListener("click", () => {
 	modalbg.style.display = "none";
   	body.classList.toggle("overflow");
