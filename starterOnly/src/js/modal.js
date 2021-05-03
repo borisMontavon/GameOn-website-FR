@@ -1,9 +1,5 @@
-// import formValidation from "./form-validation";
-// var newForm = new formValidation;
-
 document.addEventListener("DOMContentLoaded", function() { 
 	navSlide();
-	// newForm();
 });
 
 //Nav animation
@@ -64,10 +60,14 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
 
+// Form validation
+const formValidation = new FormValidation();
+
 // Launch modal event + disable overflow on body (prevent double scrolling)
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
 	modalbg.style.display = "block";
 	body.classList.toggle("overflow");
+	formValidation.isFormFieldsValid();
 }));
 
 closeModal.addEventListener("click", () => {

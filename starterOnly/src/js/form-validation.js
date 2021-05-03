@@ -1,4 +1,4 @@
-class formValidation {
+class FormValidation {
     // Validate the form
 
     // Validate first/last name inputs
@@ -89,7 +89,7 @@ class formValidation {
 
     // Validating at least one checkbox selected
     isOneCheckboxSelected() {
-        if (!isQuantityValid()) {
+        if (!this.isQuantityValid()) {
             return false;
         }
             
@@ -132,25 +132,25 @@ class formValidation {
         btnSubmit.addEventListener("click", () => {
             var isFormValid = true;
 
-            if (!isFirstNameValid()) {
+            if (!this.isFirstNameValid()) {
                 isFormValid = false;
             }
-            if (!isLastNameValid())	{
+            if (!this.isLastNameValid())	{
                 isFormValid = false;
             }
-            if (!isEmailValid()) {
+            if (!this.isEmailValid()) {
                 isFormValid = false;
             }
-            if (!isBirthDateValid()) {
+            if (!this.isBirthDateValid()) {
                 isFormValid = false;
             }
-            if (isQuantityValid()) {
+            if (this.isQuantityValid()) {
                 isFormValid = false;
             }
-            if (isOneCheckboxSelected()) {
+            if (this.isOneCheckboxSelected()) {
                 isFormValid = false;
             }
-            if (isConditionsChecked()) {
+            if (this.isConditionsChecked()) {
                 isFormValid = false;
             }
 
@@ -160,57 +160,3 @@ class formValidation {
         });
     }
 }
-
-// firstNameInput.addEventListener("change", (e) => {
-// 	const value = e.target.value;
-// 	const hasNumber = /\d/.test(value);
-
-// 	if (hasNumber || value.length < 2) {
-// 		firstNameSpan.style.display = "block";
-// 	} else {
-// 		firstNameSpan.style.display = "none";
-// 	}
-// 	return hasNumber;
-// });
-
-// lastNameInput.addEventListener("change", (e) => {
-// 	const value = e.target.value;
-// 	const hasNumber = /\d/.test(value);
-
-// 	if (hasNumber || value.length < 2) {
-// 		lastNameSpan.style.display = "block";
-// 	} else {
-// 		lastNameSpan.style.display = "none";
-// 	}
-// 	return hasNumber;
-// });
-
-// const emailInput = document.querySelector("#email");
-// const emailSpan = document.querySelector("#emailSpan");
-
-// emailInput.addEventListener("change", (e) => {
-// 	const regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-// 	const value = e.target.value;
-
-// 	if (!regEx.test(value)) {
-// 		emailSpan.style.display = "block";
-// 	} else {
-// 		emailSpan.style.display = "none";
-// 	}
-// 	return regEx.test(value);
-// });
-
-// const quantityInput = document.querySelector("#quantity");
-// const quantitySpan = document.querySelector("#quantitySpan");
-
-// quantityInput.addEventListener("change", (e) => {
-// 	const regEx = /[0-9]/;
-// 	const value = e.target.value;
-
-// 	if (!regEx.test(value) || value > 99) {
-// 		quantitySpan.style.display = "block";
-// 	} else {
-// 		quantitySpan.style.display = "none";
-// 	}
-// 	return regEx.test(value);
-// });
