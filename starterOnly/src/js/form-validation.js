@@ -126,15 +126,21 @@ const isConditionsChecked =() => {
 
 // Display "Thank you" modal
 const displayThankYouModal = () => {
-    const formOne = document.querySelector("form");
-    const contentOne = document.querySelector(".content");
-    const modalBody = document.querySelector(".modal-body");
-    const thankYouModal  = document.querySelector(".thank-you-modal");
+    // const formOne = document.querySelector("form");
+    // const contentOne = document.querySelector(".content");
+    // const modalBody = document.querySelector(".modal-body");
+    // const thankYouModal  = document.querySelector(".thank-you-modal");
 
-    formOne.style.display = "none";
-    contentOne.classList.add("content-height");
-    modalBody.classList.add("modal-body-height");
-    thankYouModal.style.display = "flex";
+    // formOne.style.display = "none";
+    // contentOne.classList.add("content-height");
+    // modalBody.classList.add("modal-body-height");
+    // thankYouModal.style.display = "flex";
+
+    const modalForm = document.getElementById("modal-form");
+    const modalTy = document.getElementById("modal-ty");
+
+    modalForm.style.display = "none";
+    modalTy.style.display = "flex";
 }
 
 const validateForm = () => {
@@ -163,13 +169,15 @@ const validateForm = () => {
     }
 
     if (isFormValid) {
+        document.getElementById('inscriptionForm').reset();
+
         displayThankYouModal();
     }
 }
 
 // Submit and check if inputs are valids
 const isFormFieldsValid = () => {
-    const btnSubmit = document.querySelector("#btnSubmit");
+    const btnSubmit = document.getElementById("btnSubmit");
 
     btnSubmit.addEventListener("click", validateForm);
 }
