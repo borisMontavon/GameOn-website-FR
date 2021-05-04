@@ -57,11 +57,7 @@ const navSlide = () => {
 const body = document.body;
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
-
-// Form validation
-// const formValidation = new FormValidation();
 
 // Launch modal event + disable overflow on body (prevent double scrolling)
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
@@ -71,7 +67,36 @@ modalBtn.forEach((btn) => btn.addEventListener("click", () => {
 }));
 
 // Force close modal
-closeModal.addEventListener("click", () => {
-	modalbg.style.display = "none";
-  	body.classList.toggle("overflow");
-});
+if (!validateForm) {
+	closeModal.addEventListener("click", () => {
+		modalbg.style.display = "none";
+		body.classList.toggle("overflow");
+	});
+} else {
+	const modalbg = document.querySelector(".bground");
+    const formOne = document.querySelector("form");
+    const contentOne = document.querySelector(".content");
+    const modalBody = document.querySelector(".modal-body");
+    const thankYouModal  = document.querySelector(".thank-you-modal");
+    const closeSubmittedModal = document.querySelector("#close-submitted-modal");
+
+    closeSubmittedModal.addEventListener("click", () => {
+        modalbg.style.display = "none";
+        formOne.style.display = "block";
+        contentOne.classList.remove("content-height");
+        modalBody.classList.remove("modal-body-height");
+        thankYouModal.style.display = "none";
+		body.classList.toggle("overflow");
+		document.getElementById("inscriptionForm").reset();
+    });
+
+	closeModal.addEventListener("click", () => {
+        modalbg.style.display = "none";
+        formOne.style.display = "block";
+        contentOne.classList.remove("content-height");
+        modalBody.classList.remove("modal-body-height");
+        thankYouModal.style.display = "none";
+		body.classList.toggle("overflow");
+		document.getElementById("inscriptionForm").reset();
+    });
+}

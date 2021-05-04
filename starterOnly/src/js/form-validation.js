@@ -124,7 +124,7 @@ const isConditionsChecked =() => {
     return true;
 }
 
-// Display the "Thank you" modal
+// Display "Thank you" modal
 const displayThankYouModal = () => {
     const formOne = document.querySelector("form");
     const contentOne = document.querySelector(".content");
@@ -132,8 +132,8 @@ const displayThankYouModal = () => {
     const thankYouModal  = document.querySelector(".thank-you-modal");
 
     formOne.style.display = "none";
-    contentOne.classList.toggle("content-height");
-    modalBody.classList.toggle("modal-body-height");
+    contentOne.classList.add("content-height");
+    modalBody.classList.add("modal-body-height");
     thankYouModal.style.display = "flex";
 }
 
@@ -173,11 +173,3 @@ const isFormFieldsValid = () => {
 
     btnSubmit.addEventListener("click", validateForm);
 }
-
-const closeThankYouModal = () => {
-    const formOne = document.querySelector("form");
-    const contentOne = document.querySelector(".content");
-    const modalBody = document.querySelector(".modal-body");
-    const thankYouModal  = document.querySelector(".thank-you-modal");
-    const closeSubmittedModal = document.querySelector("#close-submitted-modal");
-} 
