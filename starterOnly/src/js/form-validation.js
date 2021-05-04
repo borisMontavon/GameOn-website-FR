@@ -174,4 +174,10 @@ const isFormFieldsValid = () => {
     btnSubmit.addEventListener("click", validateForm);
 }
 
-// var closeSubmittedModal = document.querySelector("#close-submitted-modal");
+const closeThankYouModal = () => {
+    const formOne = document.querySelector("form");
+    const contentOne = document.querySelector(".content");
+    const modalBody = document.querySelector(".modal-body");
+    const thankYouModal  = document.querySelector(".thank-you-modal");
+    const closeSubmittedModal = document.querySelector("#close-submitted-modal");
+} 

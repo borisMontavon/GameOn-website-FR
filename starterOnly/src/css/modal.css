@@ -532,6 +532,10 @@ input[type="date"] {
 
 /* Checkbox style */
 
+.checkbox2-label {
+  text-align: left;
+}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -673,8 +677,32 @@ input[type="date"] {
   height: 100vh !important;
 }
 
+@media screen and (min-width: 768px) {
+  .content-height {
+    height: 90vh !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content-height {
+    height: 80vh !important;
+  }
+}
+
 .modal-body-height {
   height: calc(100vh - 40px) !important;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-body-height {
+    height: calc(90vh - 40px) !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .modal-body-height {
+    height: calc(80vh - 40px) !important;
+  }
 }
 
 .thank-you-modal {
