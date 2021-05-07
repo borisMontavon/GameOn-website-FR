@@ -55,13 +55,15 @@ const navSlide = () => {
 
 // DOM Elements
 const body = document.body;
-const modalbg = document.querySelector(".bground");
+const modalForm = document.getElementById("modal-form");
+const modalTy = document.getElementById("modal-ty");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const closeModal = document.querySelectorAll(".close");
+const overButton = document.getElementById("close-submitted-modal");
 
 // Launch modal event + disable overflow on body (prevent double scrolling)
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
-	modalbg.style.display = "block";
+	modalForm.style.display = "block";
 	body.classList.toggle("overflow");
 	isFormFieldsValid();
 }));
@@ -73,3 +75,9 @@ closeModal.forEach((btn) => btn.addEventListener("click", (e) => {
 	parent.style.display = "none";
 	body.classList.toggle("overflow");
 }));
+
+// Close modalTy
+overButton.addEventListener("click", () => {
+	modalTy.style.display = "none";
+	body.classList.toggle("overflow");
+});

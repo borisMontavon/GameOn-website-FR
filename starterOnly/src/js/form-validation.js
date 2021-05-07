@@ -2,8 +2,8 @@
 
 // Validate first/last name inputs
 const isFirstNameValid = () => {
-    const firstNameValue = document.querySelector("#first").value;
-    const firstNameSpan = document.querySelector("#firstNameSpan");
+    const firstNameValue = document.getElementById("first").value;
+    const firstNameSpan = document.getElementById("firstNameSpan");
     const hasNumber = /\d/.test(firstNameValue);
 
     if (hasNumber || firstNameValue.length < 2) {
@@ -18,8 +18,8 @@ const isFirstNameValid = () => {
 };
 
 const isLastNameValid = () => {
-    const lastNameValue = document.querySelector("#last").value;
-    const lastNameSpan = document.querySelector("#lastNameSpan");
+    const lastNameValue = document.getElementById("last").value;
+    const lastNameSpan = document.getElementById("lastNameSpan");
     const hasNumber = /\d/.test(lastNameValue);
 
     if (hasNumber || lastNameValue.length < 2) {
@@ -36,8 +36,8 @@ const isLastNameValid = () => {
 
 // Validating email using regex
 const isEmailValid = () => {
-    const emailValue = document.querySelector("#email").value;
-    const emailSpan = document.querySelector("#emailSpan");
+    const emailValue = document.getElementById("email").value;
+    const emailSpan = document.getElementById("emailSpan");
     const regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const emailAdressTest = regEx.test(emailValue);
 
@@ -55,8 +55,8 @@ const isEmailValid = () => {
 
 // Validating birthdate input
 const isBirthDateValid = () => {
-    const birthInput = document.querySelector("#birthdate");
-    const birthSpan = document.querySelector("#birthSpan");
+    const birthInput = document.getElementById("birthdate");
+    const birthSpan = document.getElementById("birthSpan");
 
     if (!birthInput.validity.valid) {
         birthSpan.style.display = "block";
@@ -71,8 +71,8 @@ const isBirthDateValid = () => {
 
 // Validating quantity input (numbers only)
 const isQuantityValid = () => {
-    const quantityValue = document.querySelector("#quantity").value;
-    const quantitySpan = document.querySelector("#quantitySpan");
+    const quantityValue = document.getElementById("quantity").value;
+    const quantitySpan = document.getElementById("quantitySpan");
     const quantityTest = /^([1-9][0-9]|[0-9])$/.test(quantityValue);
 
     if (!quantityTest || quantityValue > 99) {
@@ -93,9 +93,9 @@ const isOneCheckboxSelected = () => {
     }
         
     const checkboxs = Array.from(document.getElementsByName("location"));
-    const checkboxSpan = document.querySelector("#checkboxSpan");
+    const checkboxSpan = document.getElementById("checkboxSpan");
     const isMinOneChecked = checkboxs.some(checkbox => checkbox.checked);
-    const quantityValue = document.querySelector("#quantity").value;
+    const quantityValue = document.getElementById("quantity").value;
 
     if (!isMinOneChecked && quantityValue > 0) {
         checkboxSpan.style.display = "block";
@@ -110,8 +110,8 @@ const isOneCheckboxSelected = () => {
 
 // Validating conditions accepted and checked
 const isConditionsChecked =() => {
-    const conditionsCheckbox = document.querySelector("#checkbox1");
-    const conditionsSpan = document.querySelector("#conditionsSpan");
+    const conditionsCheckbox = document.getElementById("checkbox1");
+    const conditionsSpan = document.getElementById("conditionsSpan");
 
     if (!conditionsCheckbox.checked) {
         conditionsSpan.style.display = "block";
@@ -126,16 +126,6 @@ const isConditionsChecked =() => {
 
 // Display "Thank you" modal
 const displayThankYouModal = () => {
-    // const formOne = document.querySelector("form");
-    // const contentOne = document.querySelector(".content");
-    // const modalBody = document.querySelector(".modal-body");
-    // const thankYouModal  = document.querySelector(".thank-you-modal");
-
-    // formOne.style.display = "none";
-    // contentOne.classList.add("content-height");
-    // modalBody.classList.add("modal-body-height");
-    // thankYouModal.style.display = "flex";
-
     const modalForm = document.getElementById("modal-form");
     const modalTy = document.getElementById("modal-ty");
 
